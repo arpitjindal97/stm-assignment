@@ -1,3 +1,6 @@
-FROM tomcat:8.5
+FROM openjdk:11
 
-COPY index.html /usr/local/tomcat/webapps/ROOT/
+WORKDIR /root
+COPY target/demo*.jar /root/demo.jar
+
+CMD ["java", "-jar", "/root/demo.jar"]
